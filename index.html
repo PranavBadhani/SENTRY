@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENTRY | Threat Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="app-header" style="justify-content: center;">
+        <div class="brand">
+            <h1 style="font-size: 2rem; letter-spacing: 4px;">SENTRY</h1>
+        </div>
+    </header>
+
+    <!-- Main Pipeline 3-Column Layout -->
+    <div class="pipeline-container">
+
+        <!-- COLUMN 1: INGESTION STAGE -->
+        <div class="pipeline-col">
+            <div class="col-header">
+                <h2>Review Injection</h2>
+                <div class="col-line"></div>
+            </div>
+
+            <!-- Organic Widget -->
+            <section class="widget">
+                <div class="widget-header">
+                    <h3 class="accent-green">Organic Data</h3>
+                    <span id="organicCount" style="display: none;">0</span>
+                </div>
+                <div class="widget-body">
+                    <textarea id="manualPost" placeholder="Enter standard human review..."></textarea>
+                    <button onclick="addOrganicData()" class="btn btn-success">Inject Authentic Node</button>
+                    <div class="scroll-stack small-stack" id="organicFeed">
+                        <div class="empty-state">No Input</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Swarm Widget -->
+            <section class="widget mt-4">
+                <div class="widget-header">
+                    <h3 class="accent-text">Synthetic Swarm</h3>
+                    <span id="swarmCount" style="display: none;">0</span>
+                </div>
+                <div class="widget-body">
+                    <div class="input-grid">
+                        <input id="target" type="text" placeholder="#TargetName">
+                        <input id="count" type="number" value="10">
+                    </div>
+                    <button onclick="addSwarmData()" id="swarmBtn" class="btn btn-danger">Initialize Swarm</button>
+                    <div class="scroll-stack small-stack" id="swarmFeed">
+                        <div class="empty-state">Awaiting Orders</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- COLUMN 2: MIXING CORUPUS -->
+        <div class="pipeline-col">
+            <div class="col-header">
+                <h2>Shuffle Reviews</h2>
+                <div class="col-line"></div>
+            </div>
+
+            <section class="widget tall-widget">
+                <div class="widget-header">
+                    <h3>Unanalyzed Stream</h3>
+                    <button onclick="shuffleAndDisplay()" class="btn btn-primary small-btn">Shuffle & Build Corpus</button>
+                </div>
+                <div class="widget-body no-padding overflow-hidden">
+                    <div id="mixedFeed" class="scroll-stack large-stack padded-stack">
+                        <div class="empty-state massive">
+                            <div class="icon-placeholder shuffle-icon"></div>
+                            <p>Corpus Buffer Empty</p>
+                            <span>Inject data and shuffle to populate.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- COLUMN 3: TRANSFORMER ANALYSIS -->
+        <div class="pipeline-col">
+            <div class="col-header">
+                <h2>Test Reviews</h2>
+                <div class="col-line"></div>
+            </div>
+            <!-- Analysis Widget -->
+            <section class="widget tall-widget analysis-widget">
+                <div class="widget-header">
+                    <h3 class="accent-cyan">Detection Engine</h3>
+                    <button class="btn btn-primary btn-glow small-btn" id="analyzeBtn" onclick="executeAnalysis()">Analyze Reviews</button>
+                </div>
+                <div class="widget-body no-padding overflow-hidden">
+                    <div class="scroll-stack large-stack padded-stack" id="analysisResults">
+                        <div class="massive" id="analysisPlaceholder">
+                            <p style="color: rgba(255,255,255,0.3); font-size: 0.85rem; font-family: var(--font-mono);">Awaiting analysis trigger...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
