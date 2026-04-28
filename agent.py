@@ -1,3 +1,4 @@
+
 import random
 import string
 
@@ -87,3 +88,4 @@ def generate_swarm_payload(target="#TARGET", count=50):
             })
 
     return swarm_data
+    
