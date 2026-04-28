@@ -1,4 +1,3 @@
-**Description
 
 SENTRY is an AI-based threat detection system built to identify coordinated inauthentic behavior on social media platforms. With the rise of advanced bots that closely mimic human activity, detecting manipulation has become more difficult than ever. These bots no longer rely on repetitive or identical content — instead, they generate varied but semantically similar messages, making traditional detection techniques ineffective.
 This project focuses on shifting the detection approach from identifying individual fake accounts to uncovering coordinated patterns across multiple entities. SENTRY analyzes how groups of accounts behave collectively — looking at timing, content similarity at a semantic level, and interaction patterns — to detect bot networks operating behind the scenes.
